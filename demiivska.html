@@ -1,23 +1,83 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>“Demiivska Station</title>
+<title>Demiivska Station</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' href='default.css' type='text/css' media='all' />
-<meta name="description" content="“Demiivska Station of Kyiv Metro">
+<link rel='stylesheet' href='css/default.css' type='text/css' media='all' />
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<meta name="description" content="Demiivska Station of Kyiv Metro">
 </head>
 <body>
 <article>
-<h1><span class="navy">“Demiivska Station</span></h1>
+<h1><span class="navy">Demiivska Station</span></h1>
 <div>
+
+<div id="map"></div>
+<script>
+    // Initialize the map and set its view to Kyiv
+    var map = L.map('map').setView([50.4501, 30.5234], 12);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Define the metro stations with their coordinates and line colors
+    var metroStations = [
+        {name: 'Demiivska Station', coords: [50.402056, 30.519065], line: 'blue'}
+    ];
+
+    // Define the metro lines with their station coordinates
+    var metroLines = {
+        blue: [
+            [50.522055, 30.498522],
+            [50.512086, 30.498206],
+            [50.487942, 30.498906],
+            [50.473139, 30.494324],
+            [50.464456, 30.487814],
+            [50.461571, 30.516268],
+            [50.458033, 30.524161],
+            [50.450486, 30.523677],
+            [50.439513, 30.516292],
+            [50.433177, 30.516485],
+            [50.425299, 30.518309],
+            [50.414895, 30.523327],
+            [50.402056, 30.519065],
+            [50.393835, 30.514499],
+            [50.382838, 30.496839],
+            [50.378710, 30.478083],
+            [50.375527, 30.467382],
+            [50.366633, 30.452165]
+        ]
+    };
+
+    // Add the metro stations to the map with visible captions
+    metroStations.forEach(function(station) {
+        var marker = L.circleMarker(station.coords, {
+            radius: 8,
+            color: station.line,
+            fillColor: station.line,
+            fillOpacity: 0.5
+        }).addTo(map);
+
+        marker.bindTooltip(station.name, {permanent: true, direction: 'top', offset: L.point(0, -10)});
+    });
+
+    // Add the metro lines to the map
+    Object.keys(metroLines).forEach(function(line) {
+        L.polyline(metroLines[line], {color: line, weight: 5}).addTo(map);
+    });
+</script>
+
 <h2>About</h2>
 <p>
     ENG 🇬🇧 -> JPN 🇯🇵 -> UKR 🇺🇦 
     <br><br>
     <b>[ENG]</b>
     <br>
-    “Demiivska is the 47th station of the Kyiv subway, located on the Obolonsko-Teremkivska line between Lybidska and Holosiivska stations. It was opened on December 15, 2010. The name comes from the historical area of Demiivka. The station is equipped with a tactile surface.
+    Demiivska is the 47th station of the Kyiv subway, located on the Obolonsko-Teremkivska line between Lybidska and Holosiivska stations. It was opened on December 15, 2010. The name comes from the historical area of Demiivka. The station is equipped with a tactile surface.
     <br>
     It is located in the Holosiivskyi district of Kyiv near Demiivska Square.
     <br>
@@ -33,9 +93,9 @@
     <br><br>
     <b>[JPN]</b>
     <br>
-    「デミエフスカ駅はキエフ地下鉄の47番目の駅で、オボロンスコ＝テレムキフスカ線のリビドスカ駅とホロシエフスカ駅の間にある。2010年12月15日に開業した。駅名はデミエフカの歴史的地域に由来する。駅には触覚が設置されている。
+    デミエフスカ駅はキーウ地下鉄の47番目の駅で、オボロンスコ・テレムキフスカ線のリビドスカ駅とホロシエフスカ駅の間にある。2010年12月15日に開業した。駅名はデミエフカの歴史的地域に由来する。駅には触覚が設置されている。
     <br>
-    駅はキエフのホロシエフスキイ地区、デミエフスカ広場の近くにある。
+    駅はキーウのホロシエフスキイ地区、デミエフスカ広場の近くにある。
     <br>
     駅の構造は、島式ホームを持つ浅い3ベイ柱である。
     <br>
@@ -43,7 +103,7 @@
     <br>
     ホームと地下切符売り場は4レーンの単式エスカレーターで結ばれている。駅には身障者用のリフトも2基設置されている。駅の出口はホロシエフスキー通りの地下通路を通って、ヴェルナドスキー図書館、中央バスターミナル、デミイヴスカ広場、ヴァレリー・ロバノフスキー通り、ナウキー通りに通じている。地上ロビーはない。
     <br>
-    この駅の特徴は、エスカレーターが通常のキエフ・メトロのようにホームの端ではなく、中央に設置されていることである。
+    この駅の特徴は、エスカレーターが通常のキーウ・メトロのようにホームの端ではなく、中央に設置されていることである。
     <br>
     さらに、ホームの東端には駅の技術施設に通じる階段があり、地下通路（追加の非常口）につながっている。
     <br><br>

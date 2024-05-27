@@ -11,3 +11,4 @@ pre { white-space: pre-wrap; word-wrap: break-word; text-align: justify; }
 .navy { color:navy; }
 .orange { color:orange; }
 .green { color:green; }
+#map { height: 600px; }

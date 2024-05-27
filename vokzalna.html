@@ -4,20 +4,80 @@
 <title>Vokzalna Station</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' href='default.css' type='text/css' media='all' />
+<link rel='stylesheet' href='css/default.css' type='text/css' media='all' />
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <meta name="description" content="Vokzalna Station of Kyiv Metro">
 </head>
 <body>
 <article>
 <h1><span class="navy">Vokzalna Station</span></h1>
 <div>
+
+<div id="map"></div>
+<script>
+    // Initialize the map and set its view to Kyiv
+    var map = L.map('map').setView([50.4501, 30.5234], 12);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Define the metro stations with their coordinates and line colors
+    var metroStations = [
+        {name: 'Vokzalna Station', coords: [50.441187, 30.488142], line: 'red'}
+    ];
+
+    // Define the metro lines with their station coordinates
+    var metroLines = {
+        red: [
+            [50.465756, 30.355644],
+            [50.457983, 30.363911],
+            [50.454322, 30.389796],
+            [50.458026, 30.413849],
+            [50.456621, 30.429983],
+            [50.456263, 30.448043],
+            [50.449788, 30.466953],
+            [50.441187, 30.488142],
+            [50.444001, 30.504034],
+            [50.445111, 30.515722],
+            [50.447656, 30.522102],
+            [50.439644, 30.547768],
+            [50.441125, 30.560414],
+            [50.445937, 30.569674],
+            [50.451239, 30.598331],
+            [50.454552, 30.612194],
+            [50.459134, 30.630429],
+            [50.464064, 30.645844]
+        ]
+    };
+
+    // Add the metro stations to the map with visible captions
+    metroStations.forEach(function(station) {
+        var marker = L.circleMarker(station.coords, {
+            radius: 8,
+            color: station.line,
+            fillColor: station.line,
+            fillOpacity: 0.5
+        }).addTo(map);
+
+        marker.bindTooltip(station.name, {permanent: true, direction: 'top', offset: L.point(0, -10)});
+    });
+
+    // Add the metro lines to the map
+    Object.keys(metroLines).forEach(function(line) {
+        L.polyline(metroLines[line], {color: line, weight: 5}).addTo(map);
+    });
+</script>
+    
 <h2>About</h2>
 <p>
     ENG 🇬🇧 -> JPN 🇯🇵 -> UKR 🇺🇦 
     <br><br>
     <b>[ENG]</b>
     <br>
-    “Vokzalna is a station of the Kyiv subway system. It is located on the Sviatoshynsko-Brovarska line between the Polytechnic Institute and University stations. It was opened on November 6, 1960 as part of the first stage of construction. It is one of the busiest stations in the Kyiv metro.
+    Vokzalna is a station of the Kyiv subway system. It is located on the Sviatoshynsko-Brovarska line between the Polytechnic Institute and University stations. It was opened on November 6, 1960 as part of the first stage of construction. It is one of the busiest stations in the Kyiv metro.
     <br>
     Since 1986, the station has had the status of an “architectural monument of local importance”, with a security number 192.
     <br>
@@ -31,15 +91,15 @@
     <br><br>
     <b>[JPN]</b>
     <br>
-    「ヴォクザルナはキエフ地下鉄の駅である。スヴィアトシンスコ-ブロヴァルスカ線の工科大学駅と大学駅の間にある。1960年11月6日、第一期工事の一部として開業した。キエフの地下鉄で最も混雑する駅のひとつである。
+    ヴォクザルナはキーウ地下鉄の駅である。スヴィアトシンスコ・ブロヴァルスカ線の工科大学駅と大学駅の間にある。1960年11月6日、第一期工事の一部として開業した。キーウの地下鉄で最も混雑する駅のひとつである。
     <br>
     1986年以来、この駅は地域の重要建築物に指定されている。
     <br>
     駅には3つの地下ホールがあり、中央ホールと2つのホールに乗り場がある。駅の各ホールは、鉄塔と交互に配置された一連の通路と連絡通路で結ばれている。地下ホールと地上ロビーは、3本のベルトで結ばれた単便エスカレーターで結ばれている。
     <br>
-    この駅は、この街の鉄道の玄関口のシンボルである。ウクライナの歴史の一端を紹介する駅にしようというのが建築家のアイデアだった。中央ホールのパイロンにある大きなブロンズ・メダル（O.マイジン作）は、これに貢献している。白い大理石の鉄塔の向きは、上部に向かって広がっているため、かなり複雑である。パイロンの上部は、巨大な型押し大理石のコーニスで固定されており、この被覆の貴重さを示している。
+    この駅は、この街の鉄道の玄関口のシンボルである。ウクライナの歴史の一端を紹介する駅にしようというのが建築家のアイデアだった。中央ホールのパイロンにある大きなブロンズ・メダル（マイジン作）は、これに貢献している。白い大理石の鉄塔の向きは、上部に向かって広がっているため、かなり複雑である。パイロンの上部は、巨大な型押し大理石のコーニスで固定されており、この被覆の貴重さを示している。
     <br>
-    地上ロビー（建築家A.V.ドブロヴォルスキーとI.L.マスレンコフ）には、キエフ・パサジルスキー駅の郊外駅舎に隣接する2階建ての建物がある。近くにはスタロヴォクザルナ駅もある。
+    地上ロビー（建築家ドブロヴォルスキーとマスレンコフ）には、キーウ・パサジルスキー駅の郊外駅舎に隣接する2階建ての建物がある。近くにはスタロヴォクザルナ駅もある。
     <br>
     この駅には鉄道駅のほか、トランスシグナル工場、ウクライナ百貨店、サーカス、多くのデザイン研究所がある。
     <br><br>

@@ -4,20 +4,61 @@
 <title>Lvivska Brama Station</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' href='default.css' type='text/css' media='all' />
+<link rel='stylesheet' href='css/default.css' type='text/css' media='all' />
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <meta name="description" content="Lvivska Brama Station of Kyiv Metro">
 </head>
 <body>
 <article>
 <h1><span class="navy">Lvivska Brama Station</span></h1>
 <div>
+
+<div id="map"></div>
+<script>
+    // Initialize the map and set its view to Kyiv
+    var map = L.map('map').setView([50.4501, 30.5234], 12);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Define the metro lines with their station coordinates
+    var metroLines = {
+        green: [
+            [50.478134, 30.434120],
+            [50.472091, 30.449257],
+            [50.465856, 30.482511],
+            [50.448211, 30.513063],
+            [50.438417, 30.518792],
+            [50.435344, 30.531711],
+            [50.425223, 30.544331],
+            [50.417137, 30.544173],
+            [50.401951, 30.560559],
+            [50.395136, 30.599660],
+            [50.394868, 30.620301],
+            [50.396047, 30.632471],
+            [50.401845, 30.654048],
+            [50.403935, 30.667209],
+            [50.403208, 30.690210],
+            [50.401757, 30.703179]
+        ]
+    };
+
+    // Add the metro lines to the map
+    Object.keys(metroLines).forEach(function(line) {
+        L.polyline(metroLines[line], {color: line, weight: 5}).addTo(map);
+    });
+</script>
+
 <h2>About</h2>
 <p>
     ENG 🇬🇧 -> JPN 🇯🇵 -> UKR 🇺🇦 
     <br><br>
     <b>[ENG]</b>
     <br>
-    “Lvivska Brama” is a station of the Kyiv subway system that is not currently open. It is located on the Syretsko-Pecherska line between the Zoloti Vorota and Lukianivska stations. Construction began in mid-1991, but due to the lack of a comprehensive solution for the reconstruction of Lvivska Square, where the station is planned to exit, and a lack of funds, the work was frozen in 1996.
+    Lvivska Brama is a station of the Kyiv subway system that is not currently open. It is located on the Syretsko-Pecherska line between the Zoloti Vorota and Lukianivska stations. Construction began in mid-1991, but due to the lack of a comprehensive solution for the reconstruction of Lvivska Square, where the station is planned to exit, and a lack of funds, the work was frozen in 1996.
     <br>
     Passing by the station in a subway car on the section between Lukianivska and Zoloti Vorota stations, one can see the lighted platforms and partially lined track walls of the station, which the city authorities are still unable to complete and put into operation. The central hall of the station is almost complete, but the inclined escalator tunnel has not been built. The station is located near Lvivska Square, which is an extremely busy place (the narrow streets of Old Kyiv do not satisfy the flow of traffic), and the opening of the metro could facilitate and speed up transportation.
     <br>
@@ -29,15 +70,15 @@
     <br><br>
     <b>[JPN]</b>
     <br>
-    「Lvivska Brama」はキエフ地下鉄の駅で、現在は営業していない。Syretsko-Pecherska線のZoloti Vorota駅とLukyanivska駅の間にある。建設は1991年半ばに始まったが、駅が出る予定のリヴィフスカ広場の再建に包括的な解決策がなく、資金不足のため、1996年に工事は凍結された。
+    リヴィウ・ブラマはキーウ地下鉄の駅で、現在は営業していない。シレツコ・ペチェルスカヤ線のゾロティ・ヴォロタ駅とルキヤニフスカ駅の間にある。建設は1991年半ばに始まったが、駅が出る予定のリヴィフスカ広場の再建に包括的な解決策がなく、資金不足のため、1996年に工事は凍結された。
     <br>
-    ルキアニフスカ駅とゾロティ・ヴォロタ駅の間の区間を地下鉄車両で通過すると、ライトアップされたホームや部分的に並べられた線路の壁が見える。駅の中央ホールはほぼ完成しているが、傾斜エスカレーターのトンネルは建設されていない。この駅はリヴィウスカ広場の近くにあり、非常に交通量の多い地域（キエフ旧市街の狭い通りは交通に適していない）であるため、地下鉄が開通すれば交通の便がよくなり、スピードアップが期待できる。
+    ルキアニフスカ駅とゾロティ・ヴォロタ駅の間の区間を地下鉄車両で通過すると、ライトアップされたホームや部分的に並べられた線路の壁が見える。駅の中央ホールはほぼ完成しているが、傾斜エスカレーターのトンネルは建設されていない。この駅はリヴィウスカ広場の近くにあり、非常に交通量の多い地域（キーウ旧市街の狭い通りは交通に適していない）であるため、地下鉄が開通すれば交通の便がよくなり、スピードアップが期待できる。
     <br>
-    市当局と地下鉄経営陣は定期的に駅を完成させる意向を表明しているが、それは言葉だけである。ハリコフ・メトロプロエクト社（PJSC Kharkivmetroproekt）は、駅の出口を建設するオプションの1つを開発した。現在、駅の開業予定日は2025年となっている。
+    市当局と地下鉄経営陣は定期的に駅を完成させる意向を表明しているが、それは言葉だけである。ハリコフ・メトロプロエクト社（PJSC ルキヤニフスカ）は、駅の出口を建設するオプションの1つを開発した。現在、駅の開業予定日は2025年となっている。
     <br>
     現時点では、ルキアニフスカからゴールデンゲート方面へ車を走らせると、この駅の実用的な利用が確認できるのみである。駅の近くには、広告映像が映し出された3Dシールドがあり、車両自体がテープの役割を果たし、静止した映像に対して高速で移動するという面白い技術を使って車両に映像を送信している。
     <br>
-    2022年2月、キエフ地下鉄公社はリヴィウスカ・ブラマ駅完成プロジェクトの開発入札を発表した。予定落札価格は73,439,266.67UAHだった。この入札は、戒厳令の導入により2022年6月に中止された。2025年までに地下鉄リヴィウスカ・ブラマ駅を完成させる予定だった。
+    2022年2月、キーウ地下鉄公社はリヴィウスカ・ブラマ駅完成プロジェクトの開発入札を発表した。予定落札価格は73,439,266.67フリヴニャだった。この入札は、戒厳令の導入により2022年6月に中止された。2025年までに地下鉄リヴィウスカ・ブラマ駅を完成させる予定だった。
     <br><br>
     <b>[UKR]</b>
     <br>

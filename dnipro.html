@@ -4,20 +4,80 @@
 <title>Dnipro Station</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' href='default.css' type='text/css' media='all' />
-<meta name="description" content="Dnipro Station of Kyiv Metro">
+<link rel='stylesheet' href='css/default.css' type='text/css' media='all' />
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<meta name="description" content=Dnipro Station of Kyiv Metro">
 </head>
 <body>
 <article>
 <h1><span class="navy">Dnipro Station</span></h1>
 <div>
+
+<div id="map"></div>
+<script>
+    // Initialize the map and set its view to Kyiv
+    var map = L.map('map').setView([50.4501, 30.5234], 12);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Define the metro stations with their coordinates and line colors
+    var metroStations = [
+        {name: 'Dnipro Station', coords: [50.441125, 30.560414], line: 'red'}
+    ];
+
+    // Define the metro lines with their station coordinates
+    var metroLines = {
+        red: [
+            [50.465756, 30.355644],
+            [50.457983, 30.363911],
+            [50.454322, 30.389796],
+            [50.458026, 30.413849],
+            [50.456621, 30.429983],
+            [50.456263, 30.448043],
+            [50.449788, 30.466953],
+            [50.441187, 30.488142],
+            [50.444001, 30.504034],
+            [50.445111, 30.515722],
+            [50.447656, 30.522102],
+            [50.439644, 30.547768],
+            [50.441125, 30.560414],
+            [50.445937, 30.569674],
+            [50.451239, 30.598331],
+            [50.454552, 30.612194],
+            [50.459134, 30.630429],
+            [50.464064, 30.645844]
+        ]
+    };
+
+    // Add the metro stations to the map with visible captions
+    metroStations.forEach(function(station) {
+        var marker = L.circleMarker(station.coords, {
+            radius: 8,
+            color: station.line,
+            fillColor: station.line,
+            fillOpacity: 0.5
+        }).addTo(map);
+
+        marker.bindTooltip(station.name, {permanent: true, direction: 'top', offset: L.point(0, -10)});
+    });
+
+    // Add the metro lines to the map
+    Object.keys(metroLines).forEach(function(line) {
+        L.polyline(metroLines[line], {color: line, weight: 5}).addTo(map);
+    });
+</script>
+
 <h2>About</h2>
 <p>
     ENG 🇬🇧 -> JPN 🇯🇵 -> UKR 🇺🇦 
     <br><br>
     <b>[ENG]</b>
     <br>
-    “Dnipro is a Kyiv subway station located on the Svyatoshynsko-Brovarska line between Arsenalna and Hydropark stations. It is located in the Pechersk district near the Dnipro River. It was opened on November 6, 1960 as part of the first stage of construction. It was the final station until 1965. It is the least busy station of the Kyiv Metro.
+    Dnipro is a Kyiv subway station located on the Svyatoshynsko-Brovarska line between Arsenalna and Hydropark stations. It is located in the Pechersk district near the Dnipro River. It was opened on November 6, 1960 as part of the first stage of construction. It was the final station until 1965. It is the least busy station of the Kyiv Metro.
     <br>
     Since 2008, the station has had the status of a “newly discovered cultural heritage site,” a monument of architecture and urban planning, science and technology (security number 529/1-Kv).
     <br>
@@ -31,7 +91,7 @@
     <br><br>
     <b>[JPN]</b>
     <br>
-    「ドニプロ駅は、スヴャトシンスコ-ブロヴァルスカ線のアルセナルナ駅とハイドロパーク駅の間にあるキエフ地下鉄の駅である。ドニプロ川近くのペチェルスク地区に位置する。1960年11月6日、第一期工事の一部として開業。1965年まで終着駅だった。キエフ・メトロで最も利用者の少ない駅である。
+    ドニプロ駅は、スヴャトシンスコ・ブロヴァルスカ線のアルセナルナ駅とハイドロパーク駅の間にあるキーウ地下鉄の駅である。ドニプロ川近くのペチェルスク地区に位置する。1960年11月6日、第一期工事の一部として開業。1965年まで終着駅だった。キーウ・メトロで最も利用者の少ない駅である。
     <br>
     2008年以降、この駅は「新発見の文化遺産」、建築・都市計画・科学技術の記念碑（保安番号529/1-Kv）に指定されている。
     <br>
@@ -39,7 +99,7 @@
     <br>
     駅のデザイン：陸上に2つのホームを持つオープン・トレッスル。
     <br>
-    ドニプロ川の急斜面近くに位置する、バンク型ホームを持つキエフ初の地上地下鉄駅。堤防上の陸橋である側面の乗降ホームからは、ドニプロ川の眺望が楽しめる。地下鉄橋は、アーチ構造の自動車道橋と組み合わされ、陸橋が続いている。橋は、ガラスとコンクリートでできた縦長の空間によって、視覚的にも機能的にも乗降場と分離されている。
+    ドニプロ川の急斜面近くに位置する、バンク型ホームを持つキーウ初の地上地下鉄駅。堤防上の陸橋である側面の乗降ホームからは、ドニプロ川の眺望が楽しめる。地下鉄橋は、アーチ構造の自動車道橋と組み合わされ、陸橋が続いている。橋は、ガラスとコンクリートでできた縦長の空間によって、視覚的にも機能的にも乗降場と分離されている。
     <br>
     下りの構造島＝パイロンは、労働者の形をした「労働」（彫刻家エドワード・クンチェヴィチ、ボレスラフ・カルロフスキー）と、鳩を連れた女性の形をした「平和」（彫刻家フロリアン・コツユビンスキー、クサンフィー・クズネツォフ、イワン・ホロヴォイ）という2つの記念碑的建造物の台座にもなっている。鉄塔には、1960年代に駅を出るために使われていた階段がある。
     <br><br>

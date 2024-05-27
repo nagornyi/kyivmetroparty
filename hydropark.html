@@ -4,13 +4,73 @@
 <title>Hydropark Station</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' href='default.css' type='text/css' media='all' />
+<link rel='stylesheet' href='css/default.css' type='text/css' media='all' />
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <meta name="description" content="Hydropark Station of Kyiv Metro">
 </head>
 <body>
 <article>
 <h1><span class="navy">Hydropark Station</span></h1>
 <div>
+
+<div id="map"></div>
+<script>
+    // Initialize the map and set its view to Kyiv
+    var map = L.map('map').setView([50.4501, 30.5234], 12);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Define the metro stations with their coordinates and line colors
+    var metroStations = [
+        {name: 'Hydropark Station', coords: [50.445937, 30.569674], line: 'red'}
+    ];
+
+    // Define the metro lines with their station coordinates
+    var metroLines = {
+        red: [
+            [50.465756, 30.355644],
+            [50.457983, 30.363911],
+            [50.454322, 30.389796],
+            [50.458026, 30.413849],
+            [50.456621, 30.429983],
+            [50.456263, 30.448043],
+            [50.449788, 30.466953],
+            [50.441187, 30.488142],
+            [50.444001, 30.504034],
+            [50.445111, 30.515722],
+            [50.447656, 30.522102],
+            [50.439644, 30.547768],
+            [50.441125, 30.560414],
+            [50.445937, 30.569674],
+            [50.451239, 30.598331],
+            [50.454552, 30.612194],
+            [50.459134, 30.630429],
+            [50.464064, 30.645844]
+        ]
+    };
+
+    // Add the metro stations to the map with visible captions
+    metroStations.forEach(function(station) {
+        var marker = L.circleMarker(station.coords, {
+            radius: 8,
+            color: station.line,
+            fillColor: station.line,
+            fillOpacity: 0.5
+        }).addTo(map);
+
+        marker.bindTooltip(station.name, {permanent: true, direction: 'top', offset: L.point(0, -10)});
+    });
+
+    // Add the metro lines to the map
+    Object.keys(metroLines).forEach(function(line) {
+        L.polyline(metroLines[line], {color: line, weight: 5}).addTo(map);
+    });
+</script>
+
 <h2>About</h2>
 <p>
     ENG 🇬🇧 -> JPN 🇯🇵 -> UKR 🇺🇦 
@@ -33,7 +93,7 @@
     <br><br>
     <b>[JPN]</b>
     <br>
-    ハイドロパークは、ドニプロ駅とリボベレシュナ駅の間にあるスヴィアトシンスコ-ブロヴァルスカ線のキエフ地下鉄8番目の駅である。キエフのドニプロフスキー地区、ブロヴァルスキー通り沿いのヴェネツキー島に位置する。
+    ハイドロパークは、ドニプロ駅とリボベレシュナ駅の間にあるスヴィアトシンスコ・ブロヴァルスカ線のキーウ地下鉄8番目の駅である。キーウのドニプロフスキー地区、ブロヴァルスキー通り沿いのヴェネツキー島に位置する。
     <br>
     駅は1965年11月5日に開業した。ハイドロパーク駅は地上駅で、2つの出口から地下鉄の地下通路に通じている。
     <br>
@@ -43,7 +103,7 @@
     <br>
     ハイドロパーク駅、リボベレシュナ駅、ダルニツィア駅の3駅は、出口の位置と柱のタイルの色が異なるだけで、同じ標準設計に従って建設された。乗客数は1日7.8千人。公共交通機関を利用できない唯一の地下鉄駅である。
     <br>
-    シンプルな建築形態、色彩、駅のデザイン、これらすべてが、この駅を公園建築として認識させるのに役立っている。水上公園は、キエフ市民の憩いの場となっている。街の中心部からドニプロ川の穏やかな砂浜や湾まで、ほんの数分で行くことができるのだ。
+    シンプルな建築形態、色彩、駅のデザイン、これらすべてが、この駅を公園建築として認識させるのに役立っている。水上公園は、キーウ市民の憩いの場となっている。街の中心部からドニプロ川の穏やかな砂浜や湾まで、ほんの数分で行くことができるのだ。
     <br>
     当初、駅は西側の出口1つだけで建設された。夏の旅客数が多かったため、1973年に1番線に右側ホームが建設され、1987年まで乗客の降車に使用された。2つ目（東側）の出口は、通行止めにすることなく建設され、1987年12月30日にオープンした。
     <br><br>

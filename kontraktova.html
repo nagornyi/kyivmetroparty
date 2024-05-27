@@ -1,23 +1,83 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Kontraktova Station</title>
+<title>Kontraktova Ploshcha Station</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' href='default.css' type='text/css' media='all' />
-<meta name="description" content="Kontraktova Station of Kyiv Metro">
+<link rel='stylesheet' href='css/default.css' type='text/css' media='all' />
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<meta name="description" content="Kontraktova Ploshcha Station of Kyiv Metro">
 </head>
 <body>
 <article>
-<h1><span class="navy">Kontraktova Station</span></h1>
+<h1><span class="navy">Kontraktova Ploshcha Station</span></h1>
 <div>
+
+<div id="map"></div>
+<script>
+    // Initialize the map and set its view to Kyiv
+    var map = L.map('map').setView([50.4501, 30.5234], 12);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Define the metro stations with their coordinates and line colors
+    var metroStations = [
+        {name: 'Kontraktova Ploshcha Station', coords: [50.461571, 30.516268], line: 'blue'}
+    ];
+
+    // Define the metro lines with their station coordinates
+    var metroLines = {
+        blue: [
+            [50.522055, 30.498522],
+            [50.512086, 30.498206],
+            [50.487942, 30.498906],
+            [50.473139, 30.494324],
+            [50.464456, 30.487814],
+            [50.461571, 30.516268],
+            [50.458033, 30.524161],
+            [50.450486, 30.523677],
+            [50.439513, 30.516292],
+            [50.433177, 30.516485],
+            [50.425299, 30.518309],
+            [50.414895, 30.523327],
+            [50.402056, 30.519065],
+            [50.393835, 30.514499],
+            [50.382838, 30.496839],
+            [50.378710, 30.478083],
+            [50.375527, 30.467382],
+            [50.366633, 30.452165]
+        ]
+    };
+
+    // Add the metro stations to the map with visible captions
+    metroStations.forEach(function(station) {
+        var marker = L.circleMarker(station.coords, {
+            radius: 8,
+            color: station.line,
+            fillColor: station.line,
+            fillOpacity: 0.5
+        }).addTo(map);
+
+        marker.bindTooltip(station.name, {permanent: true, direction: 'top', offset: L.point(0, -10)});
+    });
+
+    // Add the metro lines to the map
+    Object.keys(metroLines).forEach(function(line) {
+        L.polyline(metroLines[line], {color: line, weight: 5}).addTo(map);
+    });
+</script>
+
 <h2>About</h2>
 <p>
     ENG 🇬🇧 -> JPN 🇯🇵 -> UKR 🇺🇦 
     <br><br>
     <b>[ENG]</b>
     <br>
-    “Kontraktova Ploshcha is the 17th station of the Kyiv subway system. It is located on the Obolonsko-Teremkivska line between the Tarasa Shevchenko and Poshtova Ploshcha stations. It was opened on December 17, 1976.
+    Kontraktova Ploshcha is the 17th station of the Kyiv subway system. It is located on the Obolonsko-Teremkivska line between the Tarasa Shevchenko and Poshtova Ploshcha stations. It was opened on December 17, 1976.
     <br>
     The structure of the station is a three-bay shallow column with an island platform.
     <br>
@@ -31,7 +91,7 @@
     <br><br>
     <b>[JPN]</b>
     <br>
-    「コントラクトヴァ・プロッシャ駅は、キエフ地下鉄の17番目の駅である。オボロンスコ＝テレムキフスカ線のタラサ・シェフチェンコ駅とポシュトヴァ・プロッシャ駅の間にある。1976年12月17日に開業した。
+    コントラクトヴァ・プロッシャ駅は、キーウ地下鉄の17番目の駅である。オボロンスコ・テレムキフスカ線のタラサ・シェフチェンコ駅とポシュトヴァ・プロッシャ駅の間にある。1976年12月17日に開業した。
     <br>
     駅の構造は、島式ホームを持つ3ベイの浅い柱である。
     <br>
@@ -41,7 +101,7 @@
     <br>
     超薄型の金属柱が特徴で、大理石で覆われていても異様に細く見える。
     <br>
-    この駅は、キエフで最も古い場所のひとつであるヴェルフニイ通りとニジニイ通り、ホリヴァ通りのエリアにある、同名のポディル広場に建設された。この地域の歴史は、地下鉄駅の建築的・芸術的デザインに反映されている。
+    この駅は、キーウで最も古い場所のひとつであるヴェルフニイ通りとニジニイ通り、ホリヴァ通りのエリアにある、同名のポディル広場に建設された。この地域の歴史は、地下鉄駅の建築的・芸術的デザインに反映されている。
     <br><br>
     <b>[UKR]</b>
     <br>
@@ -57,7 +117,7 @@
     <br>
     Станцію збудовано на однойменній площі Подолу, в одному з найдавніших місць Києва — в районі вулиць Верхній та Нижній вали, Хорива. Історія цього району міста знайшла своє відображення в архітектурно-художньому оформленні станції метро.
 </p>
-<p><img src="img/kontraktova.jpg" alt="Kontraktova Station" border="1"></p>
+<p><img src="img/kontraktova.jpg" alt="Kontraktova Ploshcha Station" border="1"></p>
 </div>
 </article>
 </body>

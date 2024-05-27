@@ -4,20 +4,80 @@
 <title>Khreshchatyk Station</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' href='default.css' type='text/css' media='all' />
+<link rel='stylesheet' href='css/default.css' type='text/css' media='all' />
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <meta name="description" content="Khreshchatyk Station of Kyiv Metro">
 </head>
 <body>
 <article>
 <h1><span class="navy">Khreshchatyk Station</span></h1>
 <div>
+
+<div id="map"></div>
+<script>
+    // Initialize the map and set its view to Kyiv
+    var map = L.map('map').setView([50.4501, 30.5234], 12);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Define the metro stations with their coordinates and line colors
+    var metroStations = [
+        {name: 'Khreshchatyk Station', coords: [50.447656, 30.522102], line: 'red'}
+    ];
+
+    // Define the metro lines with their station coordinates
+    var metroLines = {
+        red: [
+            [50.465756, 30.355644],
+            [50.457983, 30.363911],
+            [50.454322, 30.389796],
+            [50.458026, 30.413849],
+            [50.456621, 30.429983],
+            [50.456263, 30.448043],
+            [50.449788, 30.466953],
+            [50.441187, 30.488142],
+            [50.444001, 30.504034],
+            [50.445111, 30.515722],
+            [50.447656, 30.522102],
+            [50.439644, 30.547768],
+            [50.441125, 30.560414],
+            [50.445937, 30.569674],
+            [50.451239, 30.598331],
+            [50.454552, 30.612194],
+            [50.459134, 30.630429],
+            [50.464064, 30.645844]
+        ]
+    };
+
+    // Add the metro stations to the map with visible captions
+    metroStations.forEach(function(station) {
+        var marker = L.circleMarker(station.coords, {
+            radius: 8,
+            color: station.line,
+            fillColor: station.line,
+            fillOpacity: 0.5
+        }).addTo(map);
+
+        marker.bindTooltip(station.name, {permanent: true, direction: 'top', offset: L.point(0, -10)});
+    });
+
+    // Add the metro lines to the map
+    Object.keys(metroLines).forEach(function(line) {
+        L.polyline(metroLines[line], {color: line, weight: 5}).addTo(map);
+    });
+</script>
+
 <h2>About</h2>
 <p>
     ENG 🇬🇧 -> JPN 🇯🇵 -> UKR 🇺🇦 
     <br><br>
     <b>[ENG]</b>
     <br>
-    “Khreshchatyk is a station of the Kyiv subway system. It is located on the Sviatoshynsko-Brovarska line between Teatralna and Arsenalna stations. It was opened on November 6, 1960 as part of the first stage of construction. It is named after the central street of Kyiv.
+    Khreshchatyk is a station of the Kyiv subway system. It is located on the Sviatoshynsko-Brovarska line between Teatralna and Arsenalna stations. It was opened on November 6, 1960 as part of the first stage of construction. It is named after the central street of Kyiv.
     <br>
     It is part of the transfer hub between the Sviatoshynsko-Brovarska and Obolonsko-Teremkivska lines.
     <br>
@@ -37,11 +97,11 @@
     <br><br>
     <b>[JPN]</b>
     <br>
-    「Khreshchatykは、キエフ地下鉄の駅である。スヴィアトシンスコ-ブロヴァルスカ線のテアトラルナ駅とアルセナルナ駅の間にある。1960年11月6日、第一期工事の一部として開業した。駅名はキエフの中央通りにちなむ。
+    フレシチャーティクは、キーウ地下鉄の駅である。スヴィアトシンスコ・ブロヴァルスカ線のテアトラルナ駅とアルセナルナ駅の間にある。1960年11月6日、第一期工事の一部として開業した。駅名はキーウの中央通りにちなむ。
     <br>
-    スヴャトシンスコ＝ブロヴァルスカ線とオボロンスコ＝テレムキフスカ線のインターチェンジの一部である。
+    スヴャトシンスコ・ブロヴァルスカ線とオボロンスコ・テレムキフスカ線のインターチェンジの一部である。
     <br>
-    駅の東側には、オボロンスコ＝テレムキフスカ線とシレツコ＝ペチェルスカ線からの支線が乗り入れている。
+    駅の東側には、オボロンスコ・テレムキフスカ線とシレツコ・ペチェルスカ線からの支線が乗り入れている。
     <br>
     1986年以来、この駅は地元の重要な建築記念物に指定されており、169番がつけられている。
     <br>
@@ -49,7 +109,7 @@
     <br>
     駅の構造は、島式ホームを持つ3アーチの鉄塔である。
     <br>
-    軌道の整備： アルセナルナ駅から3バールの可逆デッドエンドで、シレツコ＝ペチェルスカ線とオボロンスコ＝テレムキフスカ線とのSSGに入る。
+    軌道の整備： アルセナルナ駅から3バールの可逆デッドエンドで、シレツコ・ペチェルスカ線とオボロンスコ・テレムキフスカ線とのSSGに入る。
     <br>
     駅には3つの地下ホールがあり、真ん中のホールと2つのホールに乗り場がある。各ホールは、パイロンと交互に配置されたポータルによって連結されている。中ホールには2つの出口がある。1960年に駅と同時に開業した西側の出口は、3ベルトのシングル・マーチ・エスカレーターを備えたエスカレーター・トンネルでフレシチャチク通りの地上ロビーにつながっている。1965年に建設された、3ベルト・シングルマーチ・エスカレーターを備えた東側のエスカレーター・インクラインは、中間ロビーにつながっており、建築家ホロデツキー通りのロビーと、インスティトゥツカ通りの地上ロビーへの3ベルト・シングルマーチ・エスカレーターを備えたエスカレーター・トンネルに分岐している。
     <br>

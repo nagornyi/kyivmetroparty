@@ -4,20 +4,80 @@
 <title>Tarasa Shevchenka Station</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' href='default.css' type='text/css' media='all' />
+<link rel='stylesheet' href='css/default.css' type='text/css' media='all' />
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <meta name="description" content="Tarasa Shevchenka Station of Kyiv Metro">
 </head>
 <body>
 <article>
 <h1><span class="navy">Tarasa Shevchenka Station</span></h1>
 <div>
+
+<div id="map"></div>
+<script>
+    // Initialize the map and set its view to Kyiv
+    var map = L.map('map').setView([50.4501, 30.5234], 12);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Define the metro stations with their coordinates and line colors
+    var metroStations = [
+        {name: 'Tarasa Shevchenka Station', coords: [50.464456, 30.487814], line: 'blue'}
+    ];
+
+    // Define the metro lines with their station coordinates
+    var metroLines = {
+        blue: [
+            [50.522055, 30.498522],
+            [50.512086, 30.498206],
+            [50.487942, 30.498906],
+            [50.473139, 30.494324],
+            [50.464456, 30.487814],
+            [50.461571, 30.516268],
+            [50.458033, 30.524161],
+            [50.450486, 30.523677],
+            [50.439513, 30.516292],
+            [50.433177, 30.516485],
+            [50.425299, 30.518309],
+            [50.414895, 30.523327],
+            [50.402056, 30.519065],
+            [50.393835, 30.514499],
+            [50.382838, 30.496839],
+            [50.378710, 30.478083],
+            [50.375527, 30.467382],
+            [50.366633, 30.452165]
+        ]
+    };
+
+    // Add the metro stations to the map with visible captions
+    metroStations.forEach(function(station) {
+        var marker = L.circleMarker(station.coords, {
+            radius: 8,
+            color: station.line,
+            fillColor: station.line,
+            fillOpacity: 0.5
+        }).addTo(map);
+
+        marker.bindTooltip(station.name, {permanent: true, direction: 'top', offset: L.point(0, -10)});
+    });
+
+    // Add the metro lines to the map
+    Object.keys(metroLines).forEach(function(line) {
+        L.polyline(metroLines[line], {color: line, weight: 5}).addTo(map);
+    });
+</script>
+    
 <h2>About</h2>
 <p>
     ENG 🇬🇧 -> JPN 🇯🇵 -> UKR 🇺🇦 
     <br><br>
     <b>[ENG]</b>
     <br>
-    “Tarasa Shevchenka is the 19th station of the Kyiv subway system. It is located on the Obolonsko-Teremkivska line between the Pochayna and Kontraktova Ploshcha stations. It was opened on December 19, 1980. It is named in honor of Taras Shevchenko.
+    Tarasa Shevchenka is the 19th station of the Kyiv subway system. It is located on the Obolonsko-Teremkivska line between the Pochayna and Kontraktova Ploshcha stations. It was opened on December 19, 1980. It is named in honor of Taras Shevchenko.
     <br>
     The design of the station is a three-bay shallow-built column with an island platform. The distance between the columns is increased - 6 meters instead of 4.
     <br>
@@ -29,7 +89,7 @@
     <br><br>
     <b>[JPN]</b>
     <br>
-    「タラサ・シェフチェンカ駅は、キエフ地下鉄の19番目の駅である。オボロンスコ＝テレムキフスカ線のポチャイナ駅とコントラクトヴァ・プラシチャ駅の間にある。1980年12月19日に開業した。駅名はタラス・シェフチェンコにちなむ。
+    タラサ・シェフチェンカ駅は、キーウ地下鉄の19番目の駅である。オボロンスコ・テレムキフスカ線のポチャイナ駅とコントラクトヴァ・プラシチャ駅の間にある。1980年12月19日に開業した。駅名はタラス・シェフチェンコにちなむ。
     <br>
     駅の構造は、島式ホームを持つ3スパンの浅い構造の柱である。柱と柱の間隔は4メートルから6メートルに広げられた。
     <br>

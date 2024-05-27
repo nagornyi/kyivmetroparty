@@ -4,20 +4,80 @@
 <title>Lisova Station</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' href='default.css' type='text/css' media='all' />
+<link rel='stylesheet' href='css/default.css' type='text/css' media='all' />
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <meta name="description" content="Lisova Station of Kyiv Metro">
 </head>
 <body>
 <article>
 <h1><span class="navy">Lisova Station</span></h1>
 <div>
+
+<div id="map"></div>
+<script>
+    // Initialize the map and set its view to Kyiv
+    var map = L.map('map').setView([50.4501, 30.5234], 12);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Define the metro stations with their coordinates and line colors
+    var metroStations = [
+        {name: 'Lisova Station', coords: [50.464064, 30.645844], line: 'red'}
+    ];
+
+    // Define the metro lines with their station coordinates
+    var metroLines = {
+        red: [
+            [50.465756, 30.355644],
+            [50.457983, 30.363911],
+            [50.454322, 30.389796],
+            [50.458026, 30.413849],
+            [50.456621, 30.429983],
+            [50.456263, 30.448043],
+            [50.449788, 30.466953],
+            [50.441187, 30.488142],
+            [50.444001, 30.504034],
+            [50.445111, 30.515722],
+            [50.447656, 30.522102],
+            [50.439644, 30.547768],
+            [50.441125, 30.560414],
+            [50.445937, 30.569674],
+            [50.451239, 30.598331],
+            [50.454552, 30.612194],
+            [50.459134, 30.630429],
+            [50.464064, 30.645844]
+        ]
+    };
+
+    // Add the metro stations to the map with visible captions
+    metroStations.forEach(function(station) {
+        var marker = L.circleMarker(station.coords, {
+            radius: 8,
+            color: station.line,
+            fillColor: station.line,
+            fillOpacity: 0.5
+        }).addTo(map);
+
+        marker.bindTooltip(station.name, {permanent: true, direction: 'top', offset: L.point(0, -10)});
+    });
+
+    // Add the metro lines to the map
+    Object.keys(metroLines).forEach(function(line) {
+        L.polyline(metroLines[line], {color: line, weight: 5}).addTo(map);
+    });
+</script>
+
 <h2>About</h2>
 <p>
     ENG 🇬🇧 -> JPN 🇯🇵 -> UKR 🇺🇦 
     <br><br>
     <b>[ENG]</b>
     <br>
-    “Lisova” is the 18th station of the Kyiv subway, the final station on the Svyatoshynsko-Brovarska line, the next one after Chernihivska station. It was opened on December 5, 1979. It has two exits connected to underground passages under Brovarskyi Avenue. It is one of the busiest stations in the Kyiv metro.
+    Lisova is the 18th station of the Kyiv subway, the final station on the Svyatoshynsko-Brovarska line, the next one after Chernihivska station. It was opened on December 5, 1979. It has two exits connected to underground passages under Brovarskyi Avenue. It is one of the busiest stations in the Kyiv metro.
     <br>
     The design of the station is an open ground station with an island platform.
     <br>
@@ -31,7 +91,7 @@
     <br><br>
     <b>[JPN]</b>
     <br>
-    「リソワ駅はキエフ地下鉄の18番目の駅で、スヴャトシンスコ-ブロヴァルスカ線の終点、チェルニヒフスカ駅の次の駅である。1979年12月5日に開業した。ブロヴァルスキー通りの地下通路につながる2つの出口がある。キエフの地下鉄で最も混雑する駅のひとつである。
+    リソワ駅はキーウ地下鉄の18番目の駅で、スヴャトシンスコ・ブロヴァルスカ線の終点、チェルニヒフスカ駅の次の駅である。1979年12月5日に開業した。ブロヴァルスキー通りの地下通路につながる2つの出口がある。キーウの地下鉄で最も混雑する駅のひとつである。
     <br>
     駅のデザインは、島式ホームを持つ開放的な地上駅である。
     <br>
