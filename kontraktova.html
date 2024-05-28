@@ -1,17 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Kontraktova Ploshcha Station</title>
+<title>Kontraktova Ploscha Station</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel='stylesheet' href='css/default.css' type='text/css' media='all' />
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<meta name="description" content="Kontraktova Ploshcha Station of Kyiv Metro">
+<meta name="description" content="Kontraktova Ploscha Station of Kyiv Metro">
 </head>
 <body>
 <article>
-<h1><span class="navy">Kontraktova Ploshcha Station / コントラクトヴァ・プロッシャ駅 / Станція Контрактова Площа</span></h1>
+<h1><span class="navy">Kontraktova Ploscha Station / コントラクトヴァ・プロッシャ駅 / Станція Контрактова Площа</span></h1>
+<p><div class="donation-container">
+  <a href="https://u24.gov.ua" class="donation-button" target="_blank">Donate to UNITED24</a>
+</div></p>
 <div>
 
 <div id="map"></div>
@@ -26,7 +30,7 @@
 
     // Define the metro stations with their coordinates and line colors
     var metroStations = [
-        {name: 'Kontraktova Ploshcha Station', coords: [50.461571, 30.516268], line: 'blue'}
+        {name: 'Kontraktova Ploscha Station', coords: [50.461571, 30.516268], line: 'blue'}
     ];
 
     // Define the metro lines with their station coordinates
@@ -73,51 +77,51 @@
 
 <h2>About</h2>
 <p>
-    ENG 🇬🇧 -> JPN 🇯🇵 -> UKR 🇺🇦 
+    <a href="#eng-text">ENG</a> 🇬🇧 -> <a href="#jpn-text">JPN</a> 🇯🇵 -> <a href="#ukr-text">UKR</a> 🇺🇦
     <br><br>
-    <b>[ENG]</b>
-    <br>
-    Kontraktova Ploshcha is the 17th station of the Kyiv subway system. It is located on the Obolonsko-Teremkivska line between the Tarasa Shevchenko and Poshtova Ploshcha stations. It was opened on December 17, 1976.
-    <br>
+    <b id="eng-text">[ENG]</b>
+    <br><br>
+    Kontraktova Ploscha is the 17th station of the Kyiv subway system. It is located on the Obolonsko-Teremkivska line between the Tarasa Shevchenko and Poshtova Ploscha stations. It was opened on December 17, 1976.
+    <br><br>
     The structure of the station is a three-bay shallow column with an island platform.
-    <br>
+    <br><br>
     Track development: 6-bar reversible dead ends from the side of Taras Shevchenko station.
-    <br>
+    <br><br>
     The hall is connected on both sides to underground lobbies that lead to underground passages. The southern exit is equipped with stairs and a two-belt single-march escalator; the underground passage goes to Kontraktova Square and Spasskaya Street. The northern exit has stairs and an underground passage leading to Verkhniy Val and Nyzhniy Val streets. There are no above-ground lobbies.
-    <br>
+    <br><br>
     The design features ultra-thin metal columns that look unusually narrow even when faced with marble.
-    <br>
+    <br><br>
     The station was built on the Podil square of the same name, in one of the oldest places in Kyiv - in the area of Verkhniy and Nyzhniy Val and Khoryva streets. The history of this area of the city is reflected in the architectural and artistic design of the metro station.
     <br><br>
-    <b>[JPN]</b>
-    <br>
+    <b id="jpn-text">[JPN]</b>
+    <br><br>
     コントラクトヴァ・プロッシャ駅は、キーウ地下鉄の17番目の駅である。オボロンスコ・テレムキフスカ線のタラサ・シェフチェンコ駅とポシュトヴァ・プロッシャ駅の間にある。1976年12月17日に開業した。
-    <br>
+    <br><br>
     駅の構造は、島式ホームを持つ3ベイの浅い柱である。
-    <br>
+    <br><br>
     軌道整備： タラス・シェフチェンコ駅側から6バールの可逆デッドエンド。
-    <br>
+    <br><br>
     ホールの両側は地下通路につながる地下ロビーでつながっている。南口には階段と2ベルト式シングルマーチエスカレーターがあり、地下通路はコントラクトヴァ広場とスパスカヤ通りに通じている。北口には階段と地下通路があり、ヴェルフニー・ヴァル通りとニジニ・ヴァル通りに通じている。地上ロビーはない。
-    <br>
+    <br><br>
     超薄型の金属柱が特徴で、大理石で覆われていても異様に細く見える。
-    <br>
+    <br><br>
     この駅は、キーウで最も古い場所のひとつであるヴェルフニイ通りとニジニイ通り、ホリヴァ通りのエリアにある、同名のポディル広場に建設された。この地域の歴史は、地下鉄駅の建築的・芸術的デザインに反映されている。
     <br><br>
-    <b>[UKR]</b>
-    <br>
+    <b id="ukr-text">[UKR]</b>
+    <br><br>
     «Контракто́ва пло́ща» — 17-та станція Київського метрополітену. Розташована на Оболонсько-Теремківській лінії між станціями «Тараса Шевченка» та «Поштова площа». Відкрита 17 грудня 1976 року.
-    <br>
+    <br><br>
     Конструкція станції — колонна трипрогінна мілкого закладення з острівною платформою.
-    <br>
+    <br><br>
     Колійний розвиток: 6-стрілочні оборотні тупики з боку станції «Тараса Шевченка».
-    <br>
+    <br><br>
     Зал з обох боків сполучений з підземними вестибюлями, що виходять у підземні переходи. Південний вихід обладнаний сходами і двострічковим одномаршевим ескалатором, підземний перехід виходить на Контрактову площу і Спаську вулицю. Північний вихід має сходи, підземний перехід виходить до вулиць Верхній вал і Нижній вал. Наземні вестибюлі відсутні.
-    <br>
+    <br><br>
     Особливості конструкції — надтонкі колони з металу, які навіть при облицюванні мармуром виглядають незвично вузькими.
-    <br>
+    <br><br>
     Станцію збудовано на однойменній площі Подолу, в одному з найдавніших місць Києва — в районі вулиць Верхній та Нижній вали, Хорива. Історія цього району міста знайшла своє відображення в архітектурно-художньому оформленні станції метро.
 </p>
-<p><img src="img/kontraktova.jpg" alt="Kontraktova Ploshcha Station" border="1"></p>
+<p><img src="img/kontraktova.jpg" alt="Kontraktova Ploscha Station" border="1"></p>
 </div>
 </article>
 </body>

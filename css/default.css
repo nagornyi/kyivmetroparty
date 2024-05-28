@@ -1,5 +1,6 @@
 body { padding: 5px; }
-h1 { font-size: 36px; }
+h1 { font-size: 24px; }
+h2 { font-size: 22px; }
 body { font: 18px Monospace, sans-serif; color: #333; }
 small { font: 8px Monospace, sans-serif; color: #333; }
 article { display: block; text-align: left; margin: 0 auto; }
@@ -11,4 +12,45 @@ pre { white-space: pre-wrap; word-wrap: break-word; text-align: justify; }
 .navy { color:navy; }
 .orange { color:orange; }
 .green { color:green; }
-#map { height: 600px; }
+
+.donation-container {
+  text-align: left;
+}
+
+.donation-button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 14px;
+  color: #fff; /* White color */
+  background-color: #007bff; /* Blue color */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase; /* All caps */
+  font-family: 'Lato', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.donation-button:hover {
+  background-color: #ffdd00; /* Yellow color */
+  color: #000; /* Black color */
+}
+
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */
+  #map { height: 300px; }
+}
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  #map { height: 300px; }
+}
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  #map { height: 400px; }
+}
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+  #map { height: 400px; }
+}
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+  #map { height: 600px; }
+}
+@media (min-width:1281px) { /* hi-res laptops and desktops */
+  #map { height: 600px; }
+}
