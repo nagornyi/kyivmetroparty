@@ -89,9 +89,9 @@ button.dark-mode-toggle {
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
-button.dark-mode-toggle:hover {
-  background-color: #555; /* Slightly lighter background on hover */
-  color: #ffdd00; /* Yellow text color on hover */
+body.dark-mode .dark-mode-toggle {
+  color: #ffdd00; /* Yellow text color */
+  background-color: #555; /* Slightly lighter background */
 }
 
 @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */
