@@ -1,8 +1,8 @@
 body { padding: 5px; }
 h1 { font-size: 24px; margin-top: 0px; }
 h2 { font-size: 22px; }
-body { font: 18px Monospace, sans-serif; color: #333; }
-small { font: 8px Monospace, sans-serif; color: #333; }
+body { font: 18px Monospace, sans-serif; background-color: white; color: #333; }
+small { font: 8px Monospace, sans-serif; background-color: white; color: #333; }
 article { display: block; text-align: left; margin: 0 auto; }
 img {  width: auto ;  max-width: 100% ;  height: auto ; }
 pre { white-space: pre-wrap; word-wrap: break-word; text-align: justify; }
@@ -55,6 +55,43 @@ pre { white-space: pre-wrap; word-wrap: break-word; text-align: justify; }
 .donation-button:hover {
   background-color: #ffdd00; /* Yellow color */
   color: #000; /* Black color */
+  text-decoration: none;
+}
+
+body.dark-mode .donation-button {
+  color: #fff; /* Ensure white color text in dark mode */
+  background-color: #007bff; /* Ensure blue background in dark mode */
+}
+
+body.dark-mode .donation-button:hover {
+  background-color: #ffdd00; /* Ensure yellow background on hover in dark mode */
+  color: #000; /* Ensure black text on hover in dark mode */
+}
+
+/* Flex container for header and dark mode toggle */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button.dark-mode-toggle {
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff; /* White text color */
+  background-color: #333; /* Dark background color */
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase; /* All caps */
+  font-family: 'Lato', sans-serif; /* Custom font */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+button.dark-mode-toggle:hover {
+  background-color: #555; /* Slightly lighter background on hover */
+  color: #ffdd00; /* Yellow text color on hover */
 }
 
 @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */
@@ -74,4 +111,58 @@ pre { white-space: pre-wrap; word-wrap: break-word; text-align: justify; }
 }
 @media (min-width:1281px) { /* hi-res laptops and desktops */
   #map { height: 600px; }
+}
+
+body {
+  background-color: white;
+  color: #333;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body.dark-mode a {
+  color: #1e90ff; /* A lighter blue for dark mode */
+}
+
+body.dark-mode a:hover {
+  color: #ffdd57; /* A yellowish color on hover for better visibility */
+}
+
+/* Style for the station list */
+.station-list {
+  list-style-type: none; /* Remove default list style */
+  padding: 0; /* Remove default padding */
+}
+
+.station-list li {
+  margin-bottom: 10px; /* Add space between list items */
+}
+
+.station-list a {
+  display: block; /* Make the entire link area clickable */
+  padding: 10px 15px; /* Add padding for better click area */
+  color: #007bff; /* Default link color */
+  text-decoration: none; /* Remove underline */
+  border: 1px solid #007bff; /* Add border */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+.station-list a:hover {
+  background-color: #007bff; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+  border-color: #0056b3; /* Change border color on hover */
 }
