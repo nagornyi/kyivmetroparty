@@ -68,14 +68,6 @@ body.dark-mode .donation-button:hover {
   color: #000; /* Ensure black text on hover in dark mode */
 }
 
-/* Disable hover effects on touch devices */
-@media (hover: none) {
-  .donation-button:hover {
-      background-color: #007bff; /* Blue color */
-      color: #fff; /* Default white text */
-  }
-}
-
 /* Flex container for header and dark mode toggle */
 .header-container {
   display: flex;
@@ -100,14 +92,6 @@ button.dark-mode-toggle {
 button.dark-mode-toggle:hover {
   background-color: #555; /* Slightly lighter background on hover */
   color: #ffdd00; /* Yellow text color on hover */
-}
-
-/* Disable hover effects on touch devices */
-@media (hover: none) {
-  .dark-mode-toggle:hover {
-      background-color: #333; /* Dark background color */
-      color: #fff; /* Default white text */
-  }
 }
 
 @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */
