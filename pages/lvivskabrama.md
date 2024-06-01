@@ -1,84 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-<title>Lvivska Brama Station</title>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' href='css/default.css' type='text/css' media='all' />
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="js/dark-mode-toggle.js"></script>
-<meta name="description" content="Lvivska Brama Station of Kyiv Metro">
-</head>
-<body>
+title: Lvivska Brama Station / リヴィウ・ブラマ駅 / Станція Львівська Брама
+station: Lvivska Brama Station
+line: green
+latitude: 50.4543472
+longtitude: 30.5030139
+
 <article>
-
-<div class="header-container">
-  <h1><a href="index.html" class="no-underline">🚉</a> <span class="green">Lvivska Brama Station / リヴィウ・ブラマ駅 / Станція Львівська Брама</span></h1>
-  <button id="dark-mode-toggle" class="dark-mode-toggle">Toggle Dark Mode</button>
-</div>
-<div class="donation-container">
-  <a href="https://u24.gov.ua" class="donation-button" target="_blank">Donate to UNITED24</a>
-</div>
-<p>
-
-<div>
-<div id="map"></div>
-<script>
-    // Initialize the map and set its view to Kyiv
-    var map = L.map('map').setView([50.4543472, 30.5030139], 12);
-
-    // Add OpenStreetMap tiles
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    // Define the metro stations with their coordinates and line colors
-    var metroStations = [
-        {name: 'Lvivska Brama Station', coords: [50.4543472, 30.5030139], line: 'green'}
-    ];
-
-    // Define the metro lines with their station coordinates
-    var metroLines = {
-        green: [
-            [50.478134, 30.434120],
-            [50.472091, 30.449257],
-            [50.465856, 30.482511],
-            [50.448211, 30.513063],
-            [50.438417, 30.518792],
-            [50.435344, 30.531711],
-            [50.425223, 30.544331],
-            [50.417137, 30.544173],
-            [50.401951, 30.560559],
-            [50.395136, 30.599660],
-            [50.394868, 30.620301],
-            [50.396047, 30.632471],
-            [50.401845, 30.654048],
-            [50.403935, 30.667209],
-            [50.403208, 30.690210],
-            [50.401757, 30.703179]
-        ]
-    };
-
-    // Add the metro stations to the map with visible captions
-    metroStations.forEach(function(station) {
-        var marker = L.circleMarker(station.coords, {
-            radius: 8,
-            color: station.line,
-            fillColor: station.line,
-            fillOpacity: 0.5
-        }).addTo(map);
-
-        marker.bindTooltip(station.name, {permanent: true, direction: 'top', offset: L.point(0, -10)});
-    });    
-
-    // Add the metro lines to the map
-    Object.keys(metroLines).forEach(function(line) {
-        L.polyline(metroLines[line], {color: line, weight: 5}).addTo(map);
-    });
-</script>
-
 <h2>About</h2>
 <p>
     <a href="#eng-text">ENG</a> 🇬🇧 -> <a href="#jpn-text">JPN</a> 🇯🇵 -> <a href="#ukr-text">UKR</a> 🇺🇦
@@ -122,9 +48,4 @@
     <a href="https://uk.wikipedia.org">Джерело: Вікіпедія</a>
 </p>
 <p><a href="https://commons.wikimedia.org/wiki/File:Lvivska_Brama_Metro_Station_Kiev_2008_02.JPG#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Lvivska_Brama_Metro_Station_Kiev_2008_02.JPG"><img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Lvivska_Brama_Metro_Station_Kiev_2008_02.JPG" alt="Lvivska Brama Metro Station Kiev 2008 02.JPG" height="739" width="1112"></a><br>Автор: © AMY&nbsp;/&nbsp;<a href="//commons.wikimedia.org/wiki/Main_Page" title="Main Page">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=61491918">Посилання</a></p>
-<p><a href="https://commons.wikimedia.org/wiki/File:%D0%A1%D1%85%D0%B5%D0%BC%D0%B0_%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D1%80%D0%BE.jpg#/media/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%A1%D1%85%D0%B5%D0%BC%D0%B0_%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D1%80%D0%BE.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/d/da/%D0%A1%D1%85%D0%B5%D0%BC%D0%B0_%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D1%80%D0%BE.jpg" alt="Схема Київського метро.jpg" height="2836" width="2836"></a><br>Автор: Kyiv Metro, Agenty zmin (Agents of change) - Kyiv Metro, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=70588773">Посилання</a></p>
-<p><a href="index.html">Go Back To Event Page</a></p>
-</div>
 </article>
-</body>
-</html>

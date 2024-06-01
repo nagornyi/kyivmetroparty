@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kyiv Metro Party</title>
+    <meta name="description" content="Kyiv Metro Party charity event in Tokyo">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" media='all' href="{{ url_for('static', filename='styles/default.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='js/dark-mode-toggle.js') }}"></script>    
+</head>
+<body>
+    <!-- Header -->
+    {% with template = self %}
+        {% include 'base/header.html' %}
+    {% endwith %}
+
+    <!-- Map -->
+    {% with template = self %}
+        {% include 'base/map.html' %}
+    {% endwith %}
+
+    <!-- Article -->
+    {% with template = self %}
+        {% include 'base/article.html' %}
+    {% endwith %}
+
+    <!-- Footer -->
+    {% with template = self %}
+        {% include 'base/footer.html' %}
+    {% endwith %}
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends "base/base.html" %}
+
+{# ===== Header content ===== #}
+
+{% block header_content %}
+<div class="header-container">
+    <h1><span class="rainbow-text">{{ page.title }}</span></h1>
+    <button id="dark-mode-toggle" class="dark-mode-toggle">Toggle Dark Mode</button>
+</div>
+<div class="donation-container">
+    <a href="https://u24.gov.ua" class="donation-button" target="_blank">Donate to UNITED24</a>
+</div>
+<p><a href="https://commons.wikimedia.org/wiki/File:%D0%A1%D1%85%D0%B5%D0%BC%D0%B0_%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D1%80%D0%BE.jpg#/media/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%A1%D1%85%D0%B5%D0%BC%D0%B0_%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D1%80%D0%BE.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/d/da/%D0%A1%D1%85%D0%B5%D0%BC%D0%B0_%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D1%80%D0%BE.jpg" alt="Схема Київського метро.jpg" height="2836" width="2836"></a><br>Автор: Kyiv Metro, Agenty zmin (Agents of change) - Kyiv Metro, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=70588773">Посилання</a></p>
+{% endblock %}
+
+{# ===== Map content ===== #}
+
+{% block map_content %}
+{% endblock %}
+
+{# ===== Page content ===== #}
+
+{% block page_content %}
+    {{ page.html|safe }}
+{% endblock %}
+
+{# ===== Footer content ===== #}
+
+{% block footer_content %}
+<p><b>Welcome to the party! 🎉 Welcome to Kyiv Metro! 🚇 Have fun! 🥳</b></p>
+{% endblock %}

@@ -1,38 +1,18 @@
-<!doctype html>
-<html lang="en">
-<head>
-<title>Kyiv Metro Party</title>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel='stylesheet' href='css/default.css' type='text/css' media='all' />
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<script src="js/dark-mode-toggle.js"></script>
-<meta name="description" content="Kyiv Metro Party charity event in Tokyo">
-</head>
-<body>
+title: Kyiv Metro Party 〜 キーウ・メトロ・パーティー
+
 <article>
-<div class="header-container">
-  <h1><span class="rainbow-text">Kyiv Metro Party 〜 キーウ・メトロ・パーティー</span></h1>
-  <button id="dark-mode-toggle" class="dark-mode-toggle">Toggle Dark Mode</button>
-</div>
-<div class="donation-container">
-  <a href="https://u24.gov.ua" class="donation-button" target="_blank">Donate to UNITED24</a>
-</div>
-<div>
-<p><a href="https://commons.wikimedia.org/wiki/File:%D0%A1%D1%85%D0%B5%D0%BC%D0%B0_%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D1%80%D0%BE.jpg#/media/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%A1%D1%85%D0%B5%D0%BC%D0%B0_%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D1%80%D0%BE.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/d/da/%D0%A1%D1%85%D0%B5%D0%BC%D0%B0_%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D1%80%D0%BE.jpg" alt="Схема Київського метро.jpg" height="2836" width="2836"></a><br>Автор: Kyiv Metro, Agenty zmin (Agents of change) - Kyiv Metro, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=70588773">Посилання</a></p>
 <h2>Party Stations 〜 パーティー駅</h2>
 <p>
 <ul class="station-list">
-<li><a href="vokzalna.html">Vokzalna Station / ヴォクザルナ駅 / Станція Вокзальна</a></li>
-<li><a href="tarasashevchenka.html">Tarasa Shevchenka Station / タラサ・シェフチェンカ駅 / Станція Тараса Шевченка</a></li>
-<li><a href="demiivska.html">Demiivska Station / デミエフスカ駅 / Станція Демі́ївська</a></li>
-<li><a href="kontraktova.html">Kontraktova Ploscha Station / コントラクトヴァ・プロッシャ駅 / Станція Контрактова Площа</a></li>
-<li><a href="khreschatyk.html">Khreschatyk Station / フレシチャーティク駅 / Станція Хрещатик</a></li>
-<li><a href="lvivskabrama.html">Lvivska Brama Station / リヴィウ・ブラマ駅 / Станція Львівська Брама</a></li>
-<li><a href="dnipro.html">Dnipro Station / ドニプロ駅 / Станція Дніпро</a></li>
-<li><a href="hidropark.html">Hidropark Station / ハイドロパーク駅 / Станція Гідропарк</a></li>
-<li><a href="lisova.html">Lisova Station / リソワ駅 / Станція Лісова</a></li>
+<li><a href="vokzalna">Vokzalna Station / ヴォクザルナ駅 / Станція Вокзальна</a></li>
+<li><a href="tarasashevchenka">Tarasa Shevchenka Station / タラサ・シェフチェンカ駅 / Станція Тараса Шевченка</a></li>
+<li><a href="demiivska">Demiivska Station / デミエフスカ駅 / Станція Демі́ївська</a></li>
+<li><a href="kontraktova">Kontraktova Ploscha Station / コントラクトヴァ・プロッシャ駅 / Станція Контрактова Площа</a></li>
+<li><a href="khreschatyk">Khreschatyk Station / フレシチャーティク駅 / Станція Хрещатик</a></li>
+<li><a href="lvivskabrama">Lvivska Brama Station / リヴィウ・ブラマ駅 / Станція Львівська Брама</a></li>
+<li><a href="dnipro">Dnipro Station / ドニプロ駅 / Станція Дніпро</a></li>
+<li><a href="hidropark">Hidropark Station / ハイドロパーク駅 / Станція Гідропарк</a></li>
+<li><a href="lisova">Lisova Station / リソワ駅 / Станція Лісова</a></li>
 </ul>
 </p>
 <h2>About</h2>
@@ -109,8 +89,4 @@
     <br>
     Увесь прибуток ми відправляємо на протез машиністу метро, який втратив ногу під час полону і прагне повернутися до своєї професії.    
 </p>
-<p><b>Welcome to the party! 🎉 Welcome to Kyiv Metro! 🚇 Have fun! 🥳</b></p>
-</div>
 </article>
-</body>
-</html>
