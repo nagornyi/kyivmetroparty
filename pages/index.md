@@ -1,8 +1,6 @@
 title: Kyiv Metro Party 〜 キーウ・メトロ・パーティー
 
 <article>
-<div>
-<p><a href="https://commons.wikimedia.org/wiki/File:%D0%A1%D1%85%D0%B5%D0%BC%D0%B0_%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D1%80%D0%BE.jpg#/media/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%A1%D1%85%D0%B5%D0%BC%D0%B0_%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D1%80%D0%BE.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/d/da/%D0%A1%D1%85%D0%B5%D0%BC%D0%B0_%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D1%80%D0%BE.jpg" alt="Схема Київського метро.jpg" height="2836" width="2836"></a><br>Автор: Kyiv Metro, Agenty zmin (Agents of change) - Kyiv Metro, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=70588773">Посилання</a></p>
 <h2>Party Stations 〜 パーティー駅</h2>
 <p>
 <ul class="station-list">
@@ -91,6 +89,4 @@ title: Kyiv Metro Party 〜 キーウ・メトロ・パーティー
     <br>
     Увесь прибуток ми відправляємо на протез машиністу метро, який втратив ногу під час полону і прагне повернутися до своєї професії.    
 </p>
-<p><b>Welcome to the party! 🎉 Welcome to Kyiv Metro! 🚇 Have fun! 🥳</b></p>
-</div>
 </article>
