@@ -10,7 +10,7 @@ Encrypting a secret page with staticrypt tool https://github.com/robinmoisson/st
 npm -g install staticrypt --registry http://registry.yarnpkg.com
 
 staticrypt quest.html \
-  --template-title "Секретна сторінка 〜 秘密のページ" \
+  --template-title "Секретна сторінка<br>秘密のページ" \
   --template-instructions "Введіть пароль щоб побачити вміст сторінки.<br>このページのロックを解除するには、秘密のパスワードを入力してください。" \
   --template-error "Невірний пароль / パスワードが間違っています" \
   --template-placeholder "Пароль / パスワード" \
