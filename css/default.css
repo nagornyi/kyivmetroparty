@@ -145,7 +145,7 @@ body.dark-mode a:hover {
   color: #ffdd57; /* A yellowish color on hover for better visibility */
 }
 
-/* Style for the station list */
+/* Style for the list of stations */
 .station-list {
   list-style-type: none; /* Remove default list style */
   padding: 0; /* Remove default padding */
@@ -167,6 +167,32 @@ body.dark-mode a:hover {
 
 .station-list a:hover {
   background-color: #007bff; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+  border-color: #0056b3; /* Change border color on hover */
+}
+
+/* Style for the list of pages */
+.page-list {
+  list-style-type: none; /* Remove default list style */
+  padding: 0; /* Remove default padding */
+}
+
+.page-list li {
+  margin-bottom: 10px; /* Add space between list items */
+}
+
+.page-list a {
+  display: block; /* Make the entire link area clickable */
+  padding: 10px 15px; /* Add padding for better click area */
+  color: violet; /* Default link color */
+  text-decoration: none; /* Remove underline */
+  border: 1px solid violet; /* Add border */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+.page-list a:hover {
+  background-color: violet; /* Change background color on hover */
   color: #fff; /* Change text color on hover */
   border-color: #0056b3; /* Change border color on hover */
 }
