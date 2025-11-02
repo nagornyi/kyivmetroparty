@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Khreschatyk Station</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel='stylesheet' href='css/default.css' type='text/css' media='all' />
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="js/dark-mode-toggle.js"></script>
+<meta name="description" content="Khreschatyk Station of Kyiv Metro">
+</head>
+<body>
+<article>
+
+<div class="header-container">
+  <h1><a href="index.html" class="no-underline">🚉</a> <span>Khreschatyk Station / フレシチャティク駅 / Станція Хрещатик</span></h1>
+  <button id="dark-mode-toggle" class="dark-mode-toggle">Toggle Dark Mode</button>
+</div>
+<div class="donation-container">
+  <a href="https://u24.gov.ua" class="donation-button" target="_blank">Donate to UNITED24</a>
+</div>
+<p>
+
+<p>
+  <a href="#ukr-text">UKR</a> 🇺🇦 -> <a href="#jpn-text">JPN</a> 🇯🇵 -> <a href="#eng-text">ENG</a> 🇬🇧
+  <br><br>
+  <b id="ukr-text">[UKR]</b>
+  <br><br>
+  🪑 «Хрещатик» — одна з найзавантаженіших і найхаотичніших станцій із пасажирами, що йдуть або на вихід у центр, або на пересадку на синю гілку метро, або ж тільки починають свою подорож. З таким темпом не часто вдається роздивитись інтер’єр, але на станції є на що глянути! Оскільки «Хрещатик» — центральна станція міста, команда, що працювала над створенням дизайну станції, звернулася до джерел українського мистецтва (тому можна побачити кукурудзу і соняшник поверх пілонів на посадковій ділянці станції). Але найцікавіше — це майоліка панно київської майстрині Оксани Грудзинської. Це імітація українського килима з 16 індивідуально розроблених плиток, де жоден візерунок, а з них потім і жодна композиція не повторюються! Але то таке, головне — на цій станції присісти можна ;)
+  <br><br>
+  <b id="jpn-text">[JPN]</b>
+  <br><br>
+  🪑「フレシチャティク駅」は、中央にある出口や他の地下鉄路線への乗り換え、あるいは旅を始める乗客で最も忙しく、最も混沌とした駅です。このペースでは、インテリアを見ることができることはあまりありませんが、駅には見るべきものがたくさんあります！「フレシチャティク駅」は都市の中心駅であるため、駅のデザインを手がけたチームはウクライナの芸術の源泉に目を向けました（これはプラットフォームの上にトウモロコシやヒマワリが見える場所です）。しかし、最も興味深いのは、キーウの芸術家オクサナ・フルジンスカによるマヨリカパネルです。これは、16個の個別にデザインされたタイルで構成されるウクライナのカーペットの模倣であり、どのパターンもどの構成も繰り返されません！でも、それはさておき、この駅で座ることができるのが一番です。
+  <br><br>
+  <b id="eng-text">[ENG]</b>
+  <br><br>
+  🪑 "Khreshchatyk" is one of the busiest and most chaotic stations, with passengers either exiting to the city center, transferring to the blue line, or just starting their journey. At such a pace, it's hard to appreciate the interior, but there's plenty to see! Given that "Khreshchatyk" is the central station of the city, the design team drew inspiration from Ukrainian art (which is why you can see corn and sunflowers above the pylons on the platform). But the most interesting feature is the majolica panel by Kyiv artist Oksana Hruzynska. It's an imitation of a Ukrainian carpet with 16 individually designed tiles, where no pattern or composition repeats! But the main thing at this station is that you can actually find a seat ;)
+</p>
+
+<p><a href="https://commons.wikimedia.org/wiki/File:%D0%9A%D1%80%D0%B5%D1%89%D0%B0%D1%82%D0%B8%D0%BA_(%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D1%82%D1%80%D0%BE)_05.jpg#/media/Fichier:%D0%9A%D1%80%D0%B5%D1%89%D0%B0%D1%82%D0%B8%D0%BA_(%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D1%82%D1%80%D0%BE)_05.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/4/41/%D0%9A%D1%80%D0%B5%D1%89%D0%B0%D1%82%D0%B8%D0%BA_%28%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D1%82%D1%80%D0%BE%29_05.jpg" alt="Крещатик (станция метро) 05.jpg" height="3456" width="5184"></a><br>Par <a href="//commons.wikimedia.org/w/index.php?title=User:Antares_610&amp;action=edit&amp;redlink=1" class="new" title="User:Antares 610 (page does not exist)">Antares 610</a> — <span class="int-own-work" lang="fr">Travail personnel</span>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" title="Creative Commons Zero, Public Domain Dedication">CC0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=45258310">Lien</a></p>
+
+<div id="map"></div>
+<script>
+    // Initialize the map and set its view to Kyiv
+    var map = L.map('map').setView([50.447656, 30.522102], 12);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Define the metro stations with their coordinates and line colors
+    var metroStations = [
+        {name: 'Khreschatyk Station', coords: [50.447656, 30.522102], line: 'red'}
+    ];
+
+    // Define the metro lines with their station coordinates
+    var metroLines = {
+        red: [
+            [50.465756, 30.355644],
+            [50.457983, 30.363911],
+            [50.454322, 30.389796],
+            [50.458026, 30.413849],
+            [50.456621, 30.429983],
+            [50.456263, 30.448043],
+            [50.449788, 30.466953],
+            [50.441187, 30.488142],
+            [50.444001, 30.504034],
+            [50.445111, 30.515722],
+            [50.447656, 30.522102],
+            [50.439644, 30.547768],
+            [50.441125, 30.560414],
+            [50.445937, 30.569674],
+            [50.451239, 30.598331],
+            [50.454552, 30.612194],
+            [50.459134, 30.630429],
+            [50.464064, 30.645844]
+        ]
+    };
+
+    // Add the metro stations to the map with visible captions
+    metroStations.forEach(function(station) {
+        var marker = L.circleMarker(station.coords, {
+            radius: 8,
+            color: station.line,
+            fillColor: station.line,
+            fillOpacity: 0.5
+        }).addTo(map);
+
+        marker.bindTooltip(station.name, {permanent: true, direction: 'top', offset: L.point(0, -10)});
+    });
+
+    // Add the metro lines to the map
+    Object.keys(metroLines).forEach(function(line) {
+        L.polyline(metroLines[line], {color: line, weight: 5}).addTo(map);
+    });
+</script>
+
+<p><a href="index.html">Go Back To Event Page</a></p>
+</article>
+</body>
+</html>

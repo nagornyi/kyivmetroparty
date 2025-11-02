@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Tarasa Shevchenka Station</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel='stylesheet' href='css/default.css' type='text/css' media='all' />
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="js/dark-mode-toggle.js"></script>
+<meta name="description" content="Tarasa Shevchenka Station of Kyiv Metro">
+</head>
+<body>
+<article>
+
+<div class="header-container">
+  <h1><a href="index.html" class="no-underline">🚉</a> <span>Tarasa Shevchenka Station / タラス・シェフチェンコ駅 / Станція Тараса Шевченка</span></h1>
+  <button id="dark-mode-toggle" class="dark-mode-toggle">Toggle Dark Mode</button>
+</div>
+<div class="donation-container">
+  <a href="https://u24.gov.ua" class="donation-button" target="_blank">Donate to UNITED24</a>
+</div>
+<p>
+
+<p>
+  <a href="#ukr-text">UKR</a> 🇺🇦 -> <a href="#jpn-text">JPN</a> 🇯🇵 -> <a href="#eng-text">ENG</a> 🇬🇧
+  <br><br>
+  <b id="ukr-text">[UKR]</b>
+  <br><br>
+  🎶 Колись «Тараса Шевченка» замислювали як пересадочну станцію на «жовту» лінію (те саме «метро на Троєщину») з виходом там, де зараз розташований барельєф із зображенням поета. Але не склалося, і основну частину своєї історії станція була однією з найменш затребуваних у столиці: на ній могло виходити по 2-3 людини на весь потяг. І все ж згодом, завдяки частій перебудові навколишньої території, вона знайшла свою популярність — до речі, це добра аналогія життя. Тому, як музика є важливою частиною культури, так і ця станція стала цікавим внеском у культурну спадщину України.
+  <br><br>
+  <b id="jpn-text">[JPN]</b>
+  <br><br>
+  🎶「タラス・シェフチェンコ駅」はかつて、「黄色い」路線（同じ「トロエシュチナへの地下鉄」）への乗り換え駅として設計され、駅の名前は皆さんがよく知っている詩人の名前から来て、彼のレリーフがある出口が計画されていました。しかし、それは実現せず、長い間、首都で最も需要の少ない駅の一つでした - 全体の列車から2～3人しか降りないこともありました。しかし、周辺地域の頻繁な再開発のおかげで、人気が出てきました - ちなみに、これは人生の良いアナロジーです。音楽が文化の重要な一部であるように、この駅もウクライナの文化遺産に興味深い貢献をしました。
+  <br><br>
+  <b id="eng-text">[ENG]</b>
+  <br><br>
+  🎶 "Tarasа Shevchenka" was originally intended to be a transfer station to the "yellow" line (that very "metro to Troieshchyna") with an exit where the bas-relief depicting the poet is now located. But it didn't work out, and for most of its history, the station was one of the least used in the capital: only 2-3 people would get off the entire train. However, over time, thanks to the frequent redevelopment of the surrounding area, it has gained popularity—a good analogy for life too. Just as music is an important part of culture, this station has become an interesting contribution to Ukraine's cultural heritage.
+</p>
+
+<p><a href="https://commons.wikimedia.org/wiki/File:Tarasa_Shevchenka_metro_station_Kiev_01.jpg#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Tarasa_Shevchenka_metro_station_Kiev_01.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Tarasa_Shevchenka_metro_station_Kiev_01.jpg" alt="Tarasa Shevchenka metro station Kiev 01.jpg" height="2000" width="3008"></a><br>Автор: © AMY&nbsp;/&nbsp;<a href="//commons.wikimedia.org/wiki/Main_Page" title="Main Page">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=9623729">Посилання</a></p>
+
+<div id="map"></div>
+<script>
+    // Initialize the map and set its view to Kyiv
+    var map = L.map('map').setView([50.464456, 30.487814], 12);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Define the metro stations with their coordinates and line colors
+    var metroStations = [
+        {name: 'Tarasa Shevchenka Station', coords: [50.464456, 30.487814], line: 'blue'}
+    ];
+
+    // Define the metro lines with their station coordinates
+    var metroLines = {
+        blue: [
+            [50.522055, 30.498522],
+            [50.512086, 30.498206],
+            [50.487942, 30.498906],
+            [50.473139, 30.494324],
+            [50.464456, 30.487814],
+            [50.461571, 30.516268],
+            [50.458033, 30.524161],
+            [50.450486, 30.523677],
+            [50.439513, 30.516292],
+            [50.433177, 30.516485],
+            [50.425299, 30.518309],
+            [50.414895, 30.523327],
+            [50.402056, 30.519065],
+            [50.393835, 30.514499],
+            [50.382838, 30.496839],
+            [50.378710, 30.478083],
+            [50.375527, 30.467382],
+            [50.366633, 30.452165]
+        ]
+    };
+
+    // Add the metro stations to the map with visible captions
+    metroStations.forEach(function(station) {
+        var marker = L.circleMarker(station.coords, {
+            radius: 8,
+            color: station.line,
+            fillColor: station.line,
+            fillOpacity: 0.5
+        }).addTo(map);
+
+        marker.bindTooltip(station.name, {permanent: true, direction: 'top', offset: L.point(0, -10)});
+    });
+
+    // Add the metro lines to the map
+    Object.keys(metroLines).forEach(function(line) {
+        L.polyline(metroLines[line], {color: line, weight: 5}).addTo(map);
+    });
+</script>
+
+<p><a href="index.html">Go Back To Event Page</a></p>
+</article>
+</body>
+</html>
